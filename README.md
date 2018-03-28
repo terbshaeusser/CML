@@ -7,6 +7,16 @@ Detailed information about the format can be found in the [Format.md](Format.md)
 document.
 
 
+## Advantages
+
+The following list shows the advantages of CML compared to already existing
+markup languages:
+
+* Less verbose syntax
+* Single and multi line comments
+* Conditional include of object keys
+
+
 ## Example
 
 ```
