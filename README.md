@@ -3,7 +3,8 @@
 The Conditional Markup Language is primary designed for description files in
 package and build systems.
 
-Detailed information about the format can be found in the *Format.md* document.
+Detailed information about the format can be found in the [Format.md](Format.md)
+document.
 
 
 ## Example
