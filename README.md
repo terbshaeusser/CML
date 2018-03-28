@@ -15,7 +15,8 @@ markup languages:
 * Less verbose syntax
 * Single and multi line comments
 * Conditional include of object keys
-
+* Escape sequences in strings start with ^ instead of \\ resulting in readable
+  Windows paths
 
 ## Example
 
