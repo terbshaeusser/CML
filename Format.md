@@ -106,9 +106,15 @@ Example:
 ## Objects
 
 Objects consist of multiple keys and their values. Keys with the same indent
-belong to the same object. A key can contain any character as long it is not a
-newline. The key and value are separated by the *:* character. In case the value
-is a primtive it has to start on the same line. If the value is an array or an
+belong to the same object. A key consists of the following characters and cannot
+start with a number:
+
+* a-z, A-Z
+* 0-9
+* \_, .
+
+The key and value are separated by the *:* character. In case the value is a
+primtive it has to start on the same line. If the value is an array or an
 object it has to start on the next line.
 
 Hint: If two keys have the same name their values are combined by the parser.
@@ -141,8 +147,10 @@ ignored. Conditions are enclosed with *[* *]* and can cover multiple lines
 without any restriction to indentation.
 
 A condition expression consists of symbols, literals and operators. The symbols
-are defined when parsing the file. In case a symbol is not defined the whole
-condition evaluates to *false*.
+are defined when parsing the file. In case a symbol is not defined and used
+without the ? operator or an operator cannot be applied because of a type
+mismatch the whole condition evaluates to *false*. Symbols can contain the same
+characters as object keys.
 
 The following operators can be used:
 
@@ -155,12 +163,13 @@ The following operators can be used:
 * a and b - returns *true* if a and b are *true*.
 * a or b - returns *true* if either a or b or both are *true*.
 * not a - returns *true* if a is *false* and *false* otherwise.
+* ? a - returns *true* if symbol a exists and *false* otherwise.
 
 The precedence of the operators is as follows:
 
 Highest
 * ==, <>, <, <=, >, >=
-* not
+* not, ?
 * and
 * or
 
