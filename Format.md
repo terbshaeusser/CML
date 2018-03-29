@@ -137,7 +137,8 @@ teacher:
 
 Keys inside an object can be prefixed with a condition in a separate line. Only
 if the condition is evaluated to *true* the key is included. Otherwise it is
-ignored.
+ignored. Conditions are enclosed with *[* *]* and can cover multiple lines
+without any restriction to indentation.
 
 A condition expression consists of symbols, literals and operators. The symbols
 are defined when parsing the file. In case a symbol is not defined the whole
