@@ -146,11 +146,14 @@ if the condition is evaluated to *true* the key is included. Otherwise it is
 ignored. Conditions are enclosed with *[* *]* and can cover multiple lines
 without any restriction to indentation.
 
-A condition expression consists of symbols, literals and operators. The symbols
-are defined when parsing the file. In case a symbol is not defined and used
-without the ? operator or an operator cannot be applied because of a type
-mismatch the whole condition evaluates to *false*. Symbols can contain the same
-characters as object keys.
+A condition expression consists of symbols, literals and operators which are
+evaluated in short-circuit fashion. The symbols are defined when parsing the
+file.
+In case a symbol is not defined and used without the ? operator or an operator
+cannot be applied because of a type mismatch and the expression is not skipped
+by the short-circuit evaluation the whole condition evaluates to *false*.
+Symbols can contain the same characters as object keys and can have boolean,
+integer, float or string values.
 
 The following operators can be used:
 
@@ -196,5 +199,3 @@ tasks:
   [OS <> "Windows"]
   clean: "rm ./a.out"
 ```
-
-Hint: Expressions use the short-circuit evaluation.
