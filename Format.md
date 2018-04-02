@@ -196,3 +196,5 @@ tasks:
   [OS <> "Windows"]
   clean: "rm ./a.out"
 ```
+
+Hint: Expressions use the short-circuit evaluation.
